@@ -11,13 +11,20 @@ import {
   setupIonicReact,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
-import { mapOutline, timeOutline, personOutline } from "ionicons/icons";
+import {
+  mapOutline,
+  timeOutline,
+  personOutline,
+  cardOutline,
+} from "ionicons/icons";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
 import RideHistory from "./pages/RideHistory";
 import ActiveRide from "./pages/ActiveRide";
+import Wallet from "./pages/Wallet";
+import Settings from "./pages/Settings";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -39,6 +46,7 @@ const MainTabs: React.FC = () => (
     <IonRouterOutlet>
       <Route exact path="/tabs/home" component={Home} />
       <Route exact path="/tabs/history" component={RideHistory} />
+      <Route exact path="/tabs/wallet" component={Wallet} />
       <Route exact path="/tabs/profile" component={Profile} />
       <Route exact path="/tabs">
         <Redirect to="/tabs/home" />
@@ -52,6 +60,10 @@ const MainTabs: React.FC = () => (
       <IonTabButton tab="history" href="/tabs/history">
         <IonIcon icon={timeOutline} />
         <IonLabel>Activity</IonLabel>
+      </IonTabButton>
+      <IonTabButton tab="wallet" href="/tabs/wallet">
+        <IonIcon icon={cardOutline} />
+        <IonLabel>Wallet</IonLabel>
       </IonTabButton>
       <IonTabButton tab="profile" href="/tabs/profile">
         <IonIcon icon={personOutline} />
@@ -69,6 +81,7 @@ const App: React.FC = () => (
         <Route exact path="/signup" component={Signup} />
         <Route path="/tabs" component={MainTabs} />
         <Route exact path="/active-ride" component={ActiveRide} />
+        <Route exact path="/settings" component={Settings} />
         <Route exact path="/">
           <Redirect to="/login" />
         </Route>

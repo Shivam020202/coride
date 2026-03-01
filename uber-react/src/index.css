@@ -4,24 +4,24 @@
   --ion-font-family:
     "Outfit", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto",
     sans-serif;
-  --ion-color-primary: #1e3a8a; /* Deep elegant blue */
-  --ion-color-primary-rgb: 30, 58, 138;
+  --ion-color-primary: #000000; /* Sleek Pitch Black */
+  --ion-color-primary-rgb: 0, 0, 0;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #172d6e;
-  --ion-color-primary-tint: #354e96;
+  --ion-color-primary-shade: #000000;
+  --ion-color-primary-tint: #333333;
 
-  --ion-color-danger: #ef4444;
-  --ion-color-danger-rgb: 239, 68, 68;
+  --ion-color-danger: #ea4335;
+  --ion-color-danger-rgb: 234, 67, 53;
   --ion-color-danger-contrast: #ffffff;
   --ion-color-danger-contrast-rgb: 255, 255, 255;
-  --ion-color-danger-shade: #dc2626;
-  --ion-color-danger-tint: #fca5a5;
+  --ion-color-danger-shade: #ce3a2e;
+  --ion-color-danger-tint: #ec5648;
 
-  --ion-color-success: #10b981;
-  --ion-color-success-rgb: 16, 185, 129;
+  --ion-color-success: #05a357;
+  --ion-color-success-rgb: 5, 163, 87;
 
-  --brand-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  --brand-gradient: linear-gradient(135deg, #000000 0%, #333333 100%);
 }
 
 body {
@@ -60,7 +60,7 @@ p {
   background-color: #0f172a !important;
 }
 .text-brand {
-  color: #1e3a8a !important;
+  color: #000000 !important;
 }
 
 ::-webkit-scrollbar {
@@ -81,7 +81,7 @@ ion-content {
 
 .premium-tab-bar ion-tab-button {
   --color: #94a3b8;
-  --color-selected: #1e3a8a;
+  --color-selected: #000000;
 }
 
 .premium-tab-bar ion-icon {

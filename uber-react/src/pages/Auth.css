@@ -20,9 +20,7 @@
   margin: 0;
   padding: 0;
   letter-spacing: -3px;
-  background: var(--brand-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #000000;
 }
 
 .auth-header p {
@@ -60,8 +58,8 @@
 }
 
 .auth-button {
-  --background: var(--ion-color-primary);
-  --background-hover: var(--ion-color-primary-shade);
+  --background: #000000;
+  --background-hover: #333333;
   --color: #ffffff;
   --border-radius: 14px;
   margin-top: 24px;
@@ -69,7 +67,7 @@
   font-size: 1.15rem;
   height: 56px;
   text-transform: none;
-  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 .auth-footer {

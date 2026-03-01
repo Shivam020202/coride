@@ -23,6 +23,7 @@
   margin: 0;
   background: var(--brand-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -183,9 +184,9 @@
 }
 
 .ride-item.selected {
-  border-color: var(--ion-color-primary);
+  border-color: #000000;
   background: #f8fafc;
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .car-icon {
@@ -225,12 +226,40 @@
 }
 
 .book-btn {
-  --background: var(--ion-color-primary);
+  --background: #000000;
   --color: #ffffff;
   --border-radius: 14px;
   height: 56px;
   font-size: 1.15rem;
   font-weight: 600;
   text-transform: none;
-  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.booking-loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 60px;
+  text-align: center;
+}
+
+.booking-spinner {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+}
+
+.booking-loader h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #0f172a;
+}
+
+.booking-loader p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.95rem;
 }

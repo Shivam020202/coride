@@ -20,6 +20,8 @@ import {
   logOutOutline,
   personCircleOutline,
   shieldCheckmarkOutline,
+  settingsOutline,
+  helpCircleOutline,
 } from "ionicons/icons";
 import "./Profile.css";
 
@@ -86,6 +88,25 @@ const Profile: React.FC = () => {
                 <IonIcon icon={mailOutline} />
               </div>
               <IonLabel>Messages</IonLabel>
+            </IonItem>
+
+            <IonItem
+              button
+              detail
+              className="profile-item"
+              onClick={() => history.push("/settings")}
+            >
+              <div slot="start" className="item-icon-wrapper bg-gray">
+                <IonIcon icon={settingsOutline} />
+              </div>
+              <IonLabel>Settings</IonLabel>
+            </IonItem>
+
+            <IonItem button detail className="profile-item">
+              <div slot="start" className="item-icon-wrapper bg-gray">
+                <IonIcon icon={helpCircleOutline} />
+              </div>
+              <IonLabel>Help</IonLabel>
             </IonItem>
 
             <IonItem button detail className="profile-item">

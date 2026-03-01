@@ -13,6 +13,7 @@ import {
   IonIcon,
   IonAvatar,
   IonButton,
+  IonSpinner,
 } from "@ionic/react";
 import { time, personCircle } from "ionicons/icons";
 import {
@@ -63,8 +64,14 @@ const Home: React.FC = () => {
     }
   };
 
+  const [isBooking, setIsBooking] = useState(false);
+
   const bookRide = () => {
-    history.push("/active-ride");
+    setIsBooking(true);
+    setTimeout(() => {
+      setIsBooking(false);
+      history.push("/active-ride");
+    }, 2500);
   };
 
   return (
@@ -142,55 +149,74 @@ const Home: React.FC = () => {
           ) : (
             <div className="ride-options-container">
               <div className="drag-handle"></div>
-              <h3 className="options-title">Choose a ride</h3>
 
-              <IonList className="ride-list">
-                <IonItem
-                  lines="none"
-                  className="ride-item selected"
-                  onClick={bookRide}
-                >
-                  <img
-                    slot="start"
-                    src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_956,h_637/v1555367310/assets/30/51e602-10bb-4e65-b122-e394d80a1c97/original/UberX_Transparent.png"
-                    className="car-icon"
-                    alt="CoRide X"
+              {isBooking ? (
+                <div className="booking-loader">
+                  <IonSpinner
+                    name="crescent"
+                    color="dark"
+                    className="booking-spinner"
                   />
-                  <IonLabel className="ride-label">
-                    <h2>CoRide X</h2>
-                    <p className="eta-text">10:24 AM • 4 mins away</p>
-                  </IonLabel>
-                  <div slot="end" className="price-info">
-                    <h3>$12.50</h3>
-                  </div>
-                </IonItem>
+                  <h3>Connecting you to a driver...</h3>
+                  <p>This should just take a moment</p>
+                </div>
+              ) : (
+                <>
+                  <h3 className="options-title">Choose a ride</h3>
 
-                <IonItem lines="none" className="ride-item" onClick={bookRide}>
-                  <img
-                    slot="start"
-                    src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_956,h_637/v1555367538/assets/31/ad21b7-595c-42e8-ac53-53966b4a5fee/original/Black_v1.png"
-                    className="car-icon"
-                    alt="CoRide Premium"
-                  />
-                  <IonLabel className="ride-label">
-                    <h2>Premium</h2>
-                    <p className="eta-text">10:27 AM • 7 mins away</p>
-                  </IonLabel>
-                  <div slot="end" className="price-info">
-                    <h3>$28.00</h3>
-                  </div>
-                </IonItem>
-              </IonList>
+                  <IonList className="ride-list">
+                    <IonItem
+                      lines="none"
+                      className="ride-item selected"
+                      onClick={bookRide}
+                    >
+                      <img
+                        slot="start"
+                        src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_956,h_637/v1555367310/assets/30/51e602-10bb-4e65-b122-e394d80a1c97/original/UberX_Transparent.png"
+                        className="car-icon"
+                        alt="CoRide X"
+                      />
+                      <IonLabel className="ride-label">
+                        <h2>CoRide X</h2>
+                        <p className="eta-text">10:24 AM • 4 mins away</p>
+                      </IonLabel>
+                      <div slot="end" className="price-info">
+                        <h3>$12.50</h3>
+                      </div>
+                    </IonItem>
 
-              <div className="book-btn-wrapper">
-                <IonButton
-                  expand="block"
-                  className="book-btn"
-                  onClick={bookRide}
-                >
-                  Confirm CoRide X
-                </IonButton>
-              </div>
+                    <IonItem
+                      lines="none"
+                      className="ride-item"
+                      onClick={bookRide}
+                    >
+                      <img
+                        slot="start"
+                        src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_956,h_637/v1555367538/assets/31/ad21b7-595c-42e8-ac53-53966b4a5fee/original/Black_v1.png"
+                        className="car-icon"
+                        alt="CoRide Premium"
+                      />
+                      <IonLabel className="ride-label">
+                        <h2>Premium</h2>
+                        <p className="eta-text">10:27 AM • 7 mins away</p>
+                      </IonLabel>
+                      <div slot="end" className="price-info">
+                        <h3>$28.00</h3>
+                      </div>
+                    </IonItem>
+                  </IonList>
+
+                  <div className="book-btn-wrapper">
+                    <IonButton
+                      expand="block"
+                      className="book-btn"
+                      onClick={bookRide}
+                    >
+                      Confirm CoRide X
+                    </IonButton>
+                  </div>
+                </>
+              )}
             </div>
           )}
         </div>
