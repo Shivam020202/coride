@@ -1,0 +1,119 @@
+import React from "react";
+import { useHistory } from "react-router-dom";
+import {
+  IonPage,
+  IonContent,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonList,
+  IonItem,
+  IonLabel,
+  IonIcon,
+  IonAvatar,
+} from "@ionic/react";
+import {
+  star,
+  giftOutline,
+  mailOutline,
+  documentTextOutline,
+  logOutOutline,
+  personCircleOutline,
+  shieldCheckmarkOutline,
+} from "ionicons/icons";
+import "./Profile.css";
+
+const Profile: React.FC = () => {
+  const history = useHistory();
+
+  const handleLogout = () => {
+    history.push("/login");
+  };
+
+  return (
+    <IonPage>
+      <IonHeader className="ion-no-border">
+        <IonToolbar className="premium-header-bg">
+          <IonTitle className="premium-title">Account</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+
+      <IonContent className="profile-bg">
+        <div className="profile-header-premium">
+          <div className="profile-user-info">
+            <h2>Charlie D.</h2>
+            <div className="profile-rating-badge">
+              <IonIcon icon={star} className="star-icon" /> <span>4.95</span>{" "}
+              Rating
+            </div>
+          </div>
+          <IonAvatar className="profile-large-avatar">
+            <img
+              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80"
+              alt="Profile"
+            />
+          </IonAvatar>
+        </div>
+
+        <div className="profile-card">
+          <IonList className="profile-list" lines="none">
+            <IonItem button detail className="profile-item">
+              <div slot="start" className="item-icon-wrapper bg-gray">
+                <IonIcon icon={personCircleOutline} />
+              </div>
+              <IonLabel>Personal Information</IonLabel>
+            </IonItem>
+
+            <IonItem button detail className="profile-item">
+              <div
+                slot="start"
+                className="item-icon-wrapper bg-blue-light text-brand"
+              >
+                <IonIcon icon={shieldCheckmarkOutline} />
+              </div>
+              <IonLabel>Safety & Trust</IonLabel>
+            </IonItem>
+
+            <IonItem button detail className="profile-item">
+              <div slot="start" className="item-icon-wrapper bg-gray">
+                <IonIcon icon={giftOutline} />
+              </div>
+              <IonLabel>Promotions</IonLabel>
+            </IonItem>
+
+            <IonItem button detail className="profile-item">
+              <div slot="start" className="item-icon-wrapper bg-gray">
+                <IonIcon icon={mailOutline} />
+              </div>
+              <IonLabel>Messages</IonLabel>
+            </IonItem>
+
+            <IonItem button detail className="profile-item">
+              <div slot="start" className="item-icon-wrapper bg-gray">
+                <IonIcon icon={documentTextOutline} />
+              </div>
+              <IonLabel>Legal</IonLabel>
+            </IonItem>
+
+            <IonItem
+              button
+              detail={false}
+              className="profile-item logout-item"
+              onClick={handleLogout}
+            >
+              <div
+                slot="start"
+                className="item-icon-wrapper bg-light-red text-red"
+              >
+                <IonIcon icon={logOutOutline} />
+              </div>
+              <IonLabel className="text-red">Sign Out</IonLabel>
+            </IonItem>
+          </IonList>
+        </div>
+      </IonContent>
+    </IonPage>
+  );
+};
+
+export default Profile;

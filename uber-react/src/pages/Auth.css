@@ -1,0 +1,90 @@
+.auth-content {
+  --background: #ffffff;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 24px;
+}
+
+.auth-header {
+  margin-bottom: 40px;
+}
+
+.brand-logo {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -3px;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.auth-header p {
+  color: #64748b;
+  font-size: 1.15rem;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-input-item {
+  --background: #f1f5f9;
+  --border-radius: 12px;
+  --padding-start: 18px;
+  --inner-padding-end: 18px;
+  --highlight-color-focused: var(--ion-color-primary);
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.auth-input-item ion-label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.auth-input-item ion-input {
+  --padding-top: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.auth-button {
+  --background: var(--ion-color-primary);
+  --background-hover: var(--ion-color-primary-shade);
+  --color: #ffffff;
+  --border-radius: 14px;
+  margin-top: 24px;
+  font-weight: 600;
+  font-size: 1.15rem;
+  height: 56px;
+  text-transform: none;
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
+}
+
+.auth-footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 1rem;
+  color: #64748b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-button {
+  --color: var(--ion-color-primary);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: none;
+}
