@@ -7,7 +7,6 @@ import {
   IonButton,
   IonText,
   IonItem,
-  IonLabel,
   IonLoading,
 } from "@ionic/react";
 import "./Auth.css";
@@ -39,8 +38,9 @@ const Signup: React.FC = () => {
 
           <form onSubmit={handleSignup} className="auth-form">
             <IonItem className="auth-input-item" lines="none">
-              <IonLabel position="floating">Full Name</IonLabel>
               <IonInput
+                label="Full Name"
+                labelPlacement="floating"
                 type="text"
                 value={name}
                 onIonChange={(e) => setName(e.detail.value!)}
@@ -49,8 +49,9 @@ const Signup: React.FC = () => {
             </IonItem>
 
             <IonItem className="auth-input-item" lines="none">
-              <IonLabel position="floating">Email Address</IonLabel>
               <IonInput
+                label="Email Address"
+                labelPlacement="floating"
                 type="email"
                 value={email}
                 onIonChange={(e) => setEmail(e.detail.value!)}
@@ -59,8 +60,9 @@ const Signup: React.FC = () => {
             </IonItem>
 
             <IonItem className="auth-input-item" lines="none">
-              <IonLabel position="floating">Password</IonLabel>
               <IonInput
+                label="Password"
+                labelPlacement="floating"
                 type="password"
                 value={password}
                 onIonChange={(e) => setPassword(e.detail.value!)}
